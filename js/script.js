@@ -71,7 +71,7 @@ var newStudent = {};
 //--------------------------/OGGETTI--------------------------
 
 //--------------------------FUNZIONI--------------------------
-// Crea un oggetto (nome, cognome, età) ed aggiungilo ad un array
+// Crea un oggetto (nome, cognome, età) e lo aggiunge ad un array
 function pushObjectsInArray(object, array) {
 
     // Messaggi per l'utente
