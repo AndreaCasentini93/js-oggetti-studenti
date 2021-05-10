@@ -11,6 +11,7 @@ Dare la possibilità all'utente, attraverso 3 prompt(), di aggiungere un nuovo o
 //------------------------VARIABILI---------------------------
 var singleStudent = document.getElementById("single-student");
 var studentsList = document.getElementById("students-list");
+var newStudentsList = document.getElementById("new-students-list");
 var nameMessage = "Inserisci il tuo nome.";
 var surnameMessage = "Inserisci il tuo cognome.";
 var ageMessage = "Inserisci la tua età.";
@@ -86,23 +87,25 @@ for (var key in student) {
 }
 
 // Stampa su HTML nome e cognome di ciascuno studente presente nell'array "students"
-for (i = 0; i < students.length; i++) {
+for (var i = 0; i < students.length; i++) {
     studentsList.innerHTML += "<li>" + students[i].name + " " + students[i].surname + "</li>";
 }
 
 // Richiedi all'utente di inserire il proprio nome
 do {
-    newStudent.name = prompt(nameMessage);
+    var userName = prompt(nameMessage).toLowerCase();
+    newStudent.name = userName[0].toUpperCase() + userName.substring(1);
     if (!isNaN(newStudent.name) || newStudent.name.trim().length == 0) {
-        nameMessage = "Il nome inserito non è valido.\nInserisci il tuo nome.";
+        nameMessage = "Il nome inserito non è valido.\n" + nameMessage;
     }
 } while (!isNaN(newStudent.name) || newStudent.name.trim().length == 0)
 
 // Richiedi all'utente di inserire il proprio cognome
 do {
-    newStudent.surname = prompt(surnameMessage);
+    var userSurname = prompt(surnameMessage).toLowerCase();
+    newStudent.surname = userSurname[0].toUpperCase() + userSurname.substring(1);
     if (!isNaN(newStudent.surname) || newStudent.surname.trim().length == 0) {
-        surnameMessage = "Il cognome inserito non è valido.\nInserisci il tuo cognome.";
+        surnameMessage = "Il cognome inserito non è valido.\n" + surnameMessage;
     }
 } while (!isNaN(newStudent.surname) || newStudent.surname.trim().length == 0)
 
@@ -110,10 +113,14 @@ do {
 do {
     newStudent.age = parseInt(prompt(ageMessage));
     if (isNaN(newStudent.age) || newStudent.age.length == 0) {
-        ageMessage = "L'età inserita non è valida.\nInserisci la tua età.";
+        ageMessage = "L'età inserita non è valida.\n" + ageMessage;
     }
 } while (isNaN(newStudent.age) || newStudent.age.length == 0)
 
 // Aggiungi il nuovo oggetto "newStudent" all'array "students"
 students.push(newStudent)
-console.log(students);
+
+// Stampa su HTML nome e cognome di ciascuno studente presente nell'array "students" aggiornato
+for (var e = 0; e < students.length; e++) {
+    newStudentsList.innerHTML += "<li>" + students[e].name + " " + students[e].surname + "</li>";
+}
