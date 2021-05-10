@@ -1,0 +1,91 @@
+/* COMMONS */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    font-family: 'Itim', cursive;
+    background-image: url("../img/sfondo.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 30px;
+    text-align: center;
+    text-shadow: 1px 1px 3px #000000;
+    color: #E3A17B;
+}
+
+button {
+    text-transform: uppercase;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: unset;
+    margin: 0 10px;
+    font-family: 'Itim', cursive;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background-color: #E3A17B;
+    box-shadow: inset 1px 1px 8px #000000;
+    cursor: pointer;
+    transition: transform .2s;
+}
+button:hover {
+    transform: scale(1.1);
+}
+
+/* CONTAINER */
+#container {
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+    padding: 50px;
+    border-radius: 20px;
+    margin: auto;
+    text-shadow: 1px 1px 3px #000000;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #000000a2;
+    box-shadow: inset 0px 0px 20px #ffffffc2;
+}
+
+/* COLUMN RIGHT */
+#col-right {
+    margin: auto 0;
+}
+#col-right li {
+    margin-bottom: 30px;
+}
+
+#new-students-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #E3A17B; 
+    box-shadow: inset 0px 0px 2px #000000;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #ffffff; 
+    box-shadow: inset 0px 0px 2px #000000;
+}
